@@ -1,8 +1,9 @@
-const Park = function (name, price, dinosaur){
+const Park = function (name, price, dinosaur, visitor){
   this.name = name;
   this.price = price;
   this.dinosaurs = [];
   this.dinosaur = dinosaur;
+  this.visitor = visitor;
 };
 
 Park.prototype.collectionOfDinosaurs = function(){
@@ -36,6 +37,17 @@ let visitedDinos;
     };
   };
   return visitedDinos;
+};
+
+Park.prototype.findBySpecies = function(species){
+let foundDinosaur = [];
+
+  for (let dinosaur of this.dinosaurs){
+    if(dinosaur.species === species){
+      foundDinosaur.push(dinosaur);
+    };
+  };
+  return foundDinosaur;
 };
 
 module.exports= Park;
