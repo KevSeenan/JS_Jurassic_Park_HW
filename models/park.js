@@ -25,4 +25,17 @@ Park.prototype.removeDinosaur = function(dinosaurToRemove){
   this.dinosaurs.splice(index, 1);
 };
 
+Park.prototype.mostVisitedDinosaur = function(){
+let dinoVisits = 0;
+let visitedDinos;
+
+  for (let dinosaur of this.dinosaurs){
+    if(dinosaur.guestsAttractedPerDay > dinoVisits){
+      visitedDinos = dinosaur;
+      dinoVisits = dinosaur.guestsAttractedPerDay;
+    };
+  };
+  return visitedDinos;
+};
+
 module.exports= Park;
