@@ -9,8 +9,8 @@ describe('Park', function() {
 
   beforeEach(function () {
     park = new Park('Jurassic Park', 70);
-    dinosaur1 = new Dinosaur('Velociraptor');
-    dinosaur2 = new Dinosaur('Brachiosaurus');
+    dinosaur1 = new Dinosaur('Velociraptor', 'carnivore', 75);
+    dinosaur2 = new Dinosaur('Brachiosaurus', 'herbivore', 40);
   })
 
   it('should have a name', function(){
