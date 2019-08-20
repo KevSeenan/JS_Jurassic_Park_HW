@@ -3,7 +3,7 @@ const Park = function (name, price, dinosaur, visitor){
   this.price = price;
   this.dinosaurs = [];
   this.dinosaur = dinosaur;
-  this.visitor = visitor;
+  this.visitors = [];
 };
 
 Park.prototype.collectionOfDinosaurs = function(){
@@ -40,7 +40,7 @@ let visitedDinos;
 };
 
 Park.prototype.findBySpecies = function(species){
-let foundDinosaur = [];
+const foundDinosaur = [];
 
   for (let dinosaur of this.dinosaurs){
     if(dinosaur.species === species){
@@ -48,6 +48,10 @@ let foundDinosaur = [];
     };
   };
   return foundDinosaur;
+};
+
+Park.prototype.dailyVisitors = function(){
+  return this.visitors.length;
 };
 
 module.exports= Park;
