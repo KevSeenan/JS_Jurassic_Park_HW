@@ -64,11 +64,14 @@ describe('Park', function() {
       });
 
       it('should calculate the total number of visitors per year', function(){
-        const actual = park.anualVisitors();
+        const actual = park.annualVisitors();
         assert.strictEqual(actual, 0);
       });
 
-      it('calculate the total revenue from ticket sales for one year');
+      it('calculate the total revenue from ticket sales for one year', function(){
+        const actual = park.totalRevenue();
+        assert.strictEqual(actual, 0);
+      });
 
       it('should be able to remove all dinosaurs of a particular species');
     });

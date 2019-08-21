@@ -51,7 +51,31 @@ const foundDinosaur = [];
 };
 
 Park.prototype.dailyVisitors = function(){
-  return this.visitors.length;
+  let guests = 0;
+
+    for (let dinosaur of this.dinosaurs){
+      guests += dinosaur.guestsAttractedPerDay;
+    };
+    return guests;
 };
+
+Park.prototype.annualVisitors = function(){
+  let guests = 0;
+
+    for (let dinosaur of this.dinosaurs){
+      guests += dinosaur.guestsAttractedPerDay;
+    };
+    return guests * 340;
+};
+
+Park.prototype.totalRevenue = function(){
+  let revenue = 0;
+
+    for(let price in this.price){
+      revenue = annualVisitors() * this.price;
+    };
+    return revenue;
+};
+
 
 module.exports= Park;
